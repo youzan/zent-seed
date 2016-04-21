@@ -1,25 +1,9 @@
 {
-  "extends": ["eslint-config-airbnb"],
-  "env": {
-    "browser": true,
-    "node": true,
-    "mocha": true,
-    "jest": true,
-    "es6": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    }
-  },
-  "plugins": [
-    "react",
-    "babel"
-  ],
+  "extends": "airbnb",
   "rules": {
     "semi": 0,
+    "max-len": 0,
+    "react/prefer-stateless-function": 0,
     "comma-dangle": 0,
     "func-names": 0,
     "prefer-const": 0,
@@ -32,7 +16,6 @@
     "react/jsx-no-bind": 0,
     "no-param-reassign": 0,
     "no-return-assign": 0,
-    "max-len": 0,
     "consistent-return": 0
   }
 }

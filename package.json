@@ -4,9 +4,12 @@
   "description": "",
   "main": "./lib/zent-seed.js",
   "scripts": {
-    "lint": "node node_modules/eslint src",
-    "dev": "node node_modules/zent-server/bin/dev",
-    "pre-publish": "node node_modules/zent-server/bin/pre-publish"
+    "lint": "node node_modules/eslint/bin/eslint ./src",
+    "dev": "node node_modules/@youzan/zent-server/bin/dev",
+    "pre-publish": "npm run lint && node node_modules/@youzan/zent-server/bin/pre-publish"
+  },
+  "zentServer": {
+    "port": 7777
   },
   "author": "youzan",
   "license": "MIT",
@@ -26,6 +29,7 @@
     "@youzan/zent-server": "^0.0.x",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^5.0.1"
   }
 }
