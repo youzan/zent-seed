@@ -5,8 +5,8 @@
   "main": "./lib/zent-seed.js",
   "scripts": {
     "lint": "node node_modules/eslint/bin/eslint ./src",
-    "dev": "node node_modules/@youzan/zent-server/bin/dev",
-    "pre-publish": "npm run lint && node node_modules/@youzan/zent-server/bin/pre-publish"
+    "dev": "node node_modules/@youzan/zent-server/bin/dev.js",
+    "pre-publish": "npm run lint && node node_modules/@youzan/zent-server/bin/pre-publish.js"
   },
   "zentServer": {
     "port": 7777
