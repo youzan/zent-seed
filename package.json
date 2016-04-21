@@ -1,0 +1,31 @@
+{
+  "name": "@youzan/zent-seed",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/zent-seed.js",
+  "scripts": {
+    "lint": "node node_modules/eslint src",
+    "dev": "node node_modules/zent-server/bin/dev",
+    "pre-publish": "node node_modules/zent-server/bin/pre-publish"
+  },
+  "author": "youzan",
+  "license": "MIT",
+  "files": [
+    "assets/",
+    "lib/",
+    "examples/",
+    "src/*.js"
+  ],
+  "dependencies": {
+    "@youzan/zent-ui-core": "^0.0.x",
+    "@youzan/zent-util": "^0.0.x",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
+  },
+  "devDependencies": {
+    "@youzan/zent-server": "^0.0.x",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-react": "^5.0.1"
+  }
+}
