@@ -15,13 +15,21 @@ Zent仓库的手脚架，新组件必须依照该仓库的文件组织方式来�
 - readme.md
 ```
 
+
+## 配置ynpm
+
+```bash
+alias ynpm="npm --registry=http://registry.npm.qima-inc.com"
+```
+
 ## 初始化项目依赖
 
 ```bash
-npm --registry=http://registry.npm.qima-inc.com install
+ynpm install
 ```
 
 ## 安装编辑器插件
+
 给你的编辑器安装上 `editorconfig` 和 `eslint` 的插件
 
 ## 命令说明
@@ -37,5 +45,5 @@ npm run dev
 npm run pre-publish
 
 # 发布
-npm --registry=http://registry.npm.qima-inc.com publish
+ynpm publish
 ```
