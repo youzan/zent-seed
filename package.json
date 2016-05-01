@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "node node_modules/eslint/bin/eslint ./src",
     "dev": "zent-kit dev",
-    "prepublish": "npm run lint && zent-kit prepublish"
+    "prepublish": "zent-kit prepublish"
   },
   "zent": {
   },
