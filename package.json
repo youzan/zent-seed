@@ -1,15 +1,14 @@
 {
   "name": "@youzan/zent-seed",
   "version": "0.0.1",
-  "description": "",
-  "main": "./lib/zent-seed.js",
+  "description": "这是一个React组件",
+  "main": "./lib/Seed.js",
   "scripts": {
     "lint": "node node_modules/eslint/bin/eslint ./src",
-    "dev": "node node_modules/@youzan/zent-server/bin/dev.js",
-    "pre-publish": "npm run lint && node node_modules/@youzan/zent-server/bin/pre-publish.js"
+    "dev": "zent-kit dev",
+    "prepublish": "npm run lint && zent-kit prepublish"
   },
-  "zentServer": {
-    "port": 7777
+  "zent": {
   },
   "author": "youzan",
   "license": "MIT",
@@ -20,13 +19,9 @@
     "src/*.js"
   ],
   "dependencies": {
-    "@youzan/zent-ui-core": "^0.0.x",
-    "@youzan/zent-util": "^0.0.x",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react": "^15.0.1"
   },
   "devDependencies": {
-    "@youzan/zent-server": "^0.0.x",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",

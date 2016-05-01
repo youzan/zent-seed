@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-export default class Seed extends Component {
-  handleClick() {
-    // do something
-  }
-
-  render() {
-    return <div className="zent-seed" onClick={() => this.handleClick}>Zent Seed</div>
-  }
+const Seed = function(props) {
+    return <div className="zent-title">code</div>;
 }
+
+export default Seed;

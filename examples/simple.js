@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import Seed from '../src/Seed'
-import '../assets/zent-seed.scss'
+import React from 'react';
+import Seed from '../src/Seed.js';
+import '../assets/index.scss';
 
-export default class Example extends Component {
-  render() {
+const Simple = function(props) {
     return <Seed />
-  }
 }
+
+export default Simple;
