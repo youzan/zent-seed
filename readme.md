@@ -1,10 +1,7 @@
-# @youzan/zent-seed
+# 欢迎使用zent-kit来初始化你的`<%= name %>`组件
 
-这是一个React组件
+接下来就可以愉快的开发了~ 注意：
 
-[![version][version-image]][download-url]
+> readme.md在执行prepublish的时候可以自动生成，修改readme被覆盖别找我😂
 
-[version-image]: https://img.shields.io/badge/cnpm-0.0.1-red.svg?style=flat-square
-[download-url]: http://npm.qima-inc.com/package/@youzan/zent-seed
-
-
+<%= documentation %>
