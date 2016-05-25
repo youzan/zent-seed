@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-const Seed = function () {
-  return <div className="zent-title">seed</div>;
+export default class Seed extends React {
+  render() {
+    return (<div className="zent-title">seed</div>)
+  }
 }
-
-export default Seed;

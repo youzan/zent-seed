@@ -1,14 +1,15 @@
-import React from 'react';
-import Seed from '../src/Index.js';
-import '../assets/index.scss';
+import React, { Component } from 'react'
+import Seed from '../src/Index.js'
+import '../assets/index.scss'
 
 /*
 ## Write Something here
 
 You can write guides for users here
 */
-const Simple = function(props) {
-    return <Seed />
-}
 
-export default Simple;
+export default class Simple extends Component {
+  render() {
+    return <Seed />
+  }
+}

@@ -5,7 +5,7 @@
   "main": "./lib/Index.js",
   "scripts": {
     "dev": "zent-kit dev",
-    "lint": "node node_modules/eslint/bin/eslint ./src",
+    "lint": "node node_modules/eslint/bin/eslint ./src ./examples",
     "prepublish": "npm run lint && zent-kit prepublish"
   },
   "author": "who r u",
