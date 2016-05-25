@@ -10,6 +10,6 @@ You can write guides for users here
 
 export default class Simple extends Component {
   render() {
-    return <Seed />
+    return (<Seed />)
   }
 }
