@@ -1,15 +1,17 @@
 # @youzan/<%= name %>
 
-请在此处填写你的文档最简单描述
+!!! 请在此处填写你的文档最简单描述 !!!
 
 [![version][version-image]][download-url]
+[![download][download-image]][download-url]
 
 [version-image]: http://npm.qima-inc.com/badge/v/@youzan/<%= name %>.svg?style=flat-square
+[download-image]: http://npm.qima-inc.com/badge/d/@youzan/<%= name %>.svg?style=flat-square
 [download-url]: http://npm.qima-inc.com/package/@youzan/<%= name %>
 
-## 使用场景或者特殊 API 设计讲解
+## !!! 使用场景或者特殊 API 设计讲解 !!!
 
-请写在本段落
+!!! 请写在本段落 !!!
 
 ## API
 
