@@ -2,7 +2,7 @@
   "name": "@youzan/<%= name %>",
   "version": "0.0.1",
   "description": "这是一个React组件",
-  "main": "./lib/Index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "dev": "zent-kit dev",
     "lint": "node node_modules/eslint/bin/eslint ./src ./examples",
