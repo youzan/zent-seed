@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Seed from '../src/index.js'
+import Seed from '../src'
 import '../assets/index.scss'
 
 /*
