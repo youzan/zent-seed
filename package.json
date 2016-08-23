@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/<%= name %>",
+  "name": "@youzan/name",
   "version": "0.0.1",
   "description": "这是一个React组件",
   "main": "./lib/index.js",
