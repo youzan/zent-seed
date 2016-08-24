@@ -1,5 +1,6 @@
 #!/bin/bash
 
+youzan=$1
 projectPath=`pwd`
 
 # install package
@@ -47,6 +48,7 @@ checkAndInstallPackage 'babel-eslint' '@6.0.4'
 checkAndInstallPackage 'eslint-plugin-import' '@1.8.1'
 checkAndInstallPackage 'eslint-plugin-jsx-a11y' '@1.2.3'
 checkAndInstallPackage 'eslint-config-airbnb' '@9.0.1'
+checkAndInstallPackage 'eslint-plugin-lean-imports' '@0.3.3'
 
 # cd to hooks folder
 cd ./.git_hooks
@@ -55,23 +57,41 @@ printf '\n========== init .eslintignore start ==========\n'
 cp ./.eslintignore "$projectPath"
 printf '\n========== init .eslintignore done ==========\n'
 
+if [[ $youzan == "youzan" ]]; then
+  printf '\n========== init .felintrc start ==========\n'
+  cp ./.felintrc "$projectPath"
+  printf '\n========== init .felintrc done ==========\n'
+fi
+
 printf '\n========== init hook ==========\n'
 mkdir "${projectPath}/.git/hooks/"
 hooks="${projectPath}/.git/hooks/"
-rm -f "${hooks}/pre-commit" "${hooks}/pre-push" "${hooks}/commit-msg"
+rm -f "${hooks}/pre-commit" "${hooks}/pre-push" "${hooks}/post-merge" "${hooks}/commit-msg"
 ln -s ../../.git_hooks/pre-commit "$hooks"
 ln -s ../../.git_hooks/pre-push "$hooks"
+ln -s ../../.git_hooks/post-merge "$hooks"
 ln -s ../../.git_hooks/commit-msg "$hooks"
 printf '\n========== chmod hook ==========\n'
 chmod a+x "./pre-commit"
 chmod a+x "./pre-push"
+chmod a+x "./post-merge"
 chmod a+x "./commit-msg"
 printf '\n========== chmod hook done ==========\n'
 
 printf '\n========== init hook done ==========\n'
 
+# config git by the way
+printf '\n========== git setting ==========\n'
 
+printf '\n git config push.default => simple \n'
+git config --replace-all push.default simple
 
-printf '\n\n如eslint和eslint-plugin-react未安装成功：\033[32m npm install -g eslint && npm install -g eslint-plugin-react\033[0m'
-printf '\n\n如 scss_lint 未安装成功：\033[32m gem install scss_lint \033[0m\n'
+printf '\n git config merge.ff => true \n'
+git config --replace-all merge.ff true
+
+printf '\n git config pull.rebase => false \n'
+git config --replace-all pull.rebase false
+
+printf '\n========== git setting done ==========\n'
+
 printf '\n========== ALL DONE, THANKS\n'
