@@ -28,6 +28,16 @@ checkAndInstallPackage()
   fi
 }
 
+ALL_HOOKS_FOLDER=$projectPath/.multi_hooks/all_hooks
+
+APPLICATION=felint
+
+if [ ! -d $ALL_HOOKS_FOLDER ];then
+  printf '\n========== 开始安装multi_hooks ==========\n'
+  curl http://gitlab.qima-inc.com/delai/youzan_git_kit/raw/master/init_multi_hooks.sh | sh
+  printf '\n========== 安装multi_hooks完成 ==========\n'
+fi
+
 # Check for eslint
 which eslint &> /dev/null
 if [[ "$?" == 1 ]]; then
@@ -51,7 +61,7 @@ checkAndInstallPackage 'eslint-config-airbnb' '@9.0.1'
 checkAndInstallPackage 'eslint-plugin-lean-imports' '@0.3.3'
 
 # cd to hooks folder
-cd ./.git_hooks
+cd ./.felint
 
 printf '\n========== init .eslintignore start ==========\n'
 cp ./.eslintignore "$projectPath"
@@ -63,35 +73,22 @@ if [[ $youzan == "youzan" ]]; then
   printf '\n========== init .felintrc done ==========\n'
 fi
 
-printf '\n========== init hook ==========\n'
-mkdir "${projectPath}/.git/hooks/"
-hooks="${projectPath}/.git/hooks/"
-rm -f "${hooks}/pre-commit" "${hooks}/pre-push" "${hooks}/post-merge" "${hooks}/commit-msg"
-ln -s ../../.git_hooks/pre-commit "$hooks"
-ln -s ../../.git_hooks/pre-push "$hooks"
-ln -s ../../.git_hooks/post-merge "$hooks"
-ln -s ../../.git_hooks/commit-msg "$hooks"
-printf '\n========== chmod hook ==========\n'
-chmod a+x "./pre-commit"
-chmod a+x "./pre-push"
-chmod a+x "./post-merge"
-chmod a+x "./commit-msg"
-printf '\n========== chmod hook done ==========\n'
-
-printf '\n========== init hook done ==========\n'
-
-# config git by the way
-printf '\n========== git setting ==========\n'
-
-printf '\n git config push.default => simple \n'
-git config --replace-all push.default simple
-
-printf '\n git config merge.ff => true \n'
-git config --replace-all merge.ff true
-
-printf '\n git config pull.rebase => false \n'
-git config --replace-all pull.rebase false
-
-printf '\n========== git setting done ==========\n'
+if [ -d $ALL_HOOKS_FOLDER ];then
+  rm -rf $ALL_HOOKS_FOLDER/$APPLICATION
+  mkdir -p $ALL_HOOKS_FOLDER/$APPLICATION
+  cd $ALL_HOOKS_FOLDER/$APPLICATION
+  # 2、下面这里填脚本地址
+  printf '\n========== init hook ==========\n'
+  ln -s ../../../.felint/pre-commit "./pre-commit"
+  ln -s ../../../.felint/commit-msg "./commit-msg"
+  printf '\n========== chmod hook ==========\n'
+  chmod -R a+x $projectPath/.multi_hooks
+  printf '\n========== chmod hook done ==========\n'
+  printf '\n========== init hook done ==========\n'
+else
+  echo '请先在当前项目里初始化 multi_hooks'
+  echo '方法：在项目根目录执行： curl http://gitlab.qima-inc.com/delai/youzan_git_kit/raw/master/init_multi_hooks.sh | sh'
+  exit 1;
+fi
 
 printf '\n========== ALL DONE, THANKS\n'
