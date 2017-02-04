@@ -17,6 +17,10 @@
     "lib/",
     "dist/"
   ],
+  "dependencies": {
+    "lodash": "4.17.x",
+    "classnames": "2.2.x"
+  },
   "jest": {
     "verbose": true,
     "automock": false,
