@@ -1,4 +1,4 @@
-# **注意: **不要单独使用，这是`zent-kit`初始化项目时的模版，请配合[zent-kit](https://github.com/youzan/zent-kit)使用。
+# 注意: 不要单独使用，这是`zent-kit`初始化项目时的模版，请配合[zent-kit](https://github.com/youzan/zent-kit)使用。
 
 
 # <%= name %>
