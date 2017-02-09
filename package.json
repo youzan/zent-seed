@@ -1,8 +1,8 @@
 {
-  "name": "@youzan/your-component-name",
+  "name": "<%= name %>",
   "version": "0.0.1",
   "description": "这是一个React组件",
-  "repository": "gitlab/url/to/your/component",
+  "repository": "url/to/your/component",
   "main": "./lib/index.js",
   "scripts": {
     "lint": "eslint --max-warnings=0 ./src ./examples",
