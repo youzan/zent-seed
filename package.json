@@ -11,9 +11,6 @@
   "author": "who r u",
   "license": "MIT",
   "files": [
-    "src/",
-    "assets/",
-    "examples/",
     "lib/",
     "dist/"
   ],
